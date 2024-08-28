@@ -1,6 +1,4 @@
 
-Certainly! Here is a comprehensive README file that includes overall project documentation, service details, and how to get started with the application.
-
 Angular Country Information Application
 This Angular application provides information about countries and public holidays. It interacts with a backend API to fetch data related to countries, including a list of available countries, details about specific countries, and public holidays for various years.
 
