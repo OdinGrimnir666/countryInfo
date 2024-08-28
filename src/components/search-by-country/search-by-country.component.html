@@ -1,0 +1,28 @@
+<mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-tile>
+        <app-widget-web *ngIf="Countries" [items]="Countries"></app-widget-web>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <div class="form-container">
+            <mat-form-field appearance="fill" class="full-width-form">
+                <mat-label>Name Country</mat-label>
+                <input matInput placeholder="Spain" value="Spain" [(ngModel)]="inputText" (ngModelChange)="onInputChange()">
+            </mat-form-field>
+
+            <div *ngIf="ShowCountries?.length !== 0" class="scroll-container">
+                <mat-list>
+                    <mat-list-item *ngFor="let country of ShowCountries">
+                        <button mat-button routerLink="country/{{country.countryCode}}" routerLinkActive="active">
+                            {{country.name}}
+                        </button>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+
+            <div *ngIf="ShowCountries?.length === 0">
+                <mat-spinner></mat-spinner>
+            </div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

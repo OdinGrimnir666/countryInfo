@@ -1,0 +1,10 @@
+<div class="holiday-widget">
+    <h3 class="widget-title">Upcoming Holidays</h3>
+    <ul class="holiday-list">
+        <li *ngFor="let holiday of Holidays">
+            <span class="holiday-name">{{ holiday.nameCountry }}</span> -
+            <span class="holiday-date">{{ holiday.Data }}</span>
+            <span class="holiday-country">{{ holiday.nameHoliday }}</span>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,38 @@
+<mat-grid-list cols="2" rowHeight="1:1">
+    <mat-grid-tile>
+        <mat-card class="country-card">
+            <mat-card-header>
+                <mat-card-title>{{ country?.commonName }}</mat-card-title>
+                <mat-card-subtitle>{{ country?.officialName }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p><strong>Country Code:</strong> {{ country?.countryCode }}</p>
+                <p><strong>Region:</strong> {{ country?.region }}</p>
+                <mat-divider></mat-divider>
+                <h3>Bordering Countries:</h3>
+                <mat-list>
+                    <mat-list-item *ngFor="let border of country?.borders">
+                        {{ border.officialName }}
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="country-card">
+            <mat-card-title>Year: {{yearNow}}</mat-card-title>
+            <div *ngIf="holidayYear" class="scroll-container">
+                <mat-list>
+                    <mat-list-item *ngFor="let holiday of holidayYear" class="scroll-container">
+                        <span> {{holiday.name}}: {{holiday.date}}</span>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <div *ngIf="!holidayYear">
+                <mat-spinner></mat-spinner>
+            </div>
+            <button mat-button  (click)="NextYear()">Next Year</button>
+            <button mat-button (click)="LastYear()">Last Year</button>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

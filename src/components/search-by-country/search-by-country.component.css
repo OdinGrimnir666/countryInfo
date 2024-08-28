@@ -1,0 +1,47 @@
+.scroll-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #100f0f;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #686868;
+
+}
+
+
+mat-grid-list {
+    width: 100%;
+}
+
+mat-grid-tile {
+    display: flex;
+    align-items: stretch;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 16px;
+}
+
+.full-width-form {
+    margin-bottom: 16px;
+}
+
+.scroll-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+mat-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    width: 100%;
+    text-align: left;
+}
+
